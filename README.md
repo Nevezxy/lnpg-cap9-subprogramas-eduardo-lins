@@ -97,3 +97,20 @@ Na versão modularizada os métodos ficaram menores e com responsabilidades espe
 ## Coesão
 
 A versão modularizada apresentou maior coesão, pois cada método executa apenas uma tarefa.
+
+# Projeto Livre
+Diagrama simples das chamadas
+main()
+ ├── lerNome()
+ ├── lerQuantidade()
+ ├── lerPreco()
+ ├── calcularTotal()
+ ├── estoqueBaixo()
+ └── imprimir()
+Dificuldades encontradas
+
+A principal dificuldade foi identificar responsabilidades dentro de programas maiores e decidir onde cada função deveria começar e terminar. Também foi necessário pensar melhor na passagem de parâmetros para evitar dependências desnecessárias.
+
+Vantagens percebidas
+
+Depois da modularização, o código ficou mais organizado, mais fácil de testar e muito mais simples de expandir. Encontrar erros também se tornou mais rápido, já que cada função possui uma responsabilidade bem definida.
