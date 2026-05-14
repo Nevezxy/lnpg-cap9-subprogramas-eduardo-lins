@@ -1,0 +1,1 @@
+Java sempre trabalha com passagem por valor. No caso de tipos primitivos, o método recebe apenas uma cópia do valor original. Isso significa que quando o valor de x foi alterado dentro do método, apenas a cópia local mudou. A variável original no main continuou exatamente igual.
