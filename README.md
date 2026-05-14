@@ -1,12 +1,12 @@
-# Entrega — Modularização e Subprogramas
+# Entrega 
 
 ## Nome completo
 
-Nevez Duneves
+Eduardo Lins Maciel das Neves
 
 ## Turma
 
-(Preencher com sua turma)
+Linguagem de Programação
 
 ---
 
