@@ -1,0 +1,4 @@
+Muita gente pensa que Java usa passagem por referência com objetos, mas tecnicamente isso não acontece. 
+Java continua usando passagem por valor. 
+O que muda é que, nesse caso, o valor copiado não é o objeto em si, mas sim a referência que aponta para ele. 
+Como tanto a variável original quanto a cópia apontam para o mesmo objeto na memória, qualquer alteração feita no objeto permanece visível após a chamada.
