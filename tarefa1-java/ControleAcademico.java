@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class ControleAcademico {
+
+    public static String lerAluno(Scanner sc) {
+        System.out.print("Nome: ");
+        return sc.nextLine();
+    }
+
+    public static double[] lerNotas(Scanner sc) {
+        double[] notas = new double[3];
+
+        for (int i = 0; i < 3; i++) {
+            System.out.print("Nota: ");
+            notas[i] = sc.nextDouble();
+        }
+
+        sc.nextLine();
+
+        return notas;
+    }
+
+    public static double calcularMedia(double[] notas) {
+        double soma = 0;
+
+        for (double nota : notas) {
+            soma += nota;
+        }
+
+        return soma / notas.length;
+    }
+
+    public static String determinarSituacao(double media) {
+        if (media >= 7) {
+            return "Aprovado";
+        }
+
+        if (media >= 5) {
+            return "Recuperacao";
+        }
+
+        return "Reprovado";
+    }
+
+    public static void imprimirRelatorio(String nome, double media, String situacao) {
+        System.out.println(nome + " - " + media + " - " + situacao);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        for (int i = 0; i < 5; i++) {
+            String nome = lerAluno(sc);
+            double[] notas = lerNotas(sc);
+            double media = calcularMedia(notas);
+            String situacao = determinarSituacao(media);
+
+            imprimirRelatorio(nome, media, situacao);
+        }
+    }
+}
