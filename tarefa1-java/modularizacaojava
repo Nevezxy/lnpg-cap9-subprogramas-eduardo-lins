@@ -1,0 +1,105 @@
+Tarefa 1 — Java
+
+Versão monolítica
+import java.util.Scanner;
+
+public class ControleAcademicoMonolitico {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String[] nomes = new String[5];
+        double[][] notas = new double[5][3];
+
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Nome: ");
+            nomes[i] = sc.nextLine();
+
+            double soma = 0;
+
+            for (int j = 0; j < 3; j++) {
+                System.out.print("Nota: ");
+                notas[i][j] = sc.nextDouble();
+                soma += notas[i][j];
+            }
+
+            sc.nextLine();
+
+            double media = soma / 3;
+
+            String situacao;
+
+            if (media >= 7) {
+                situacao = "Aprovado";
+            } else if (media >= 5) {
+                situacao = "Recuperacao";
+            } else {
+                situacao = "Reprovado";
+            }
+
+            System.out.println(nomes[i] + " - " + media + " - " + situacao);
+        }
+    }
+}
+
+Versão modularizada
+import java.util.Scanner;
+
+public class ControleAcademico {
+
+    public static String lerAluno(Scanner sc) {
+        System.out.print("Nome: ");
+        return sc.nextLine();
+    }
+
+    public static double[] lerNotas(Scanner sc) {
+        double[] notas = new double[3];
+
+        for (int i = 0; i < 3; i++) {
+            System.out.print("Nota: ");
+            notas[i] = sc.nextDouble();
+        }
+
+        sc.nextLine();
+
+        return notas;
+    }
+
+    public static double calcularMedia(double[] notas) {
+        double soma = 0;
+
+        for (double nota : notas) {
+            soma += nota;
+        }
+
+        return soma / notas.length;
+    }
+
+    public static String determinarSituacao(double media) {
+        if (media >= 7) {
+            return "Aprovado";
+        }
+
+        if (media >= 5) {
+            return "Recuperacao";
+        }
+
+        return "Reprovado";
+    }
+
+    public static void imprimirRelatorio(String nome, double media, String situacao) {
+        System.out.println(nome + " - " + media + " - " + situacao);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        for (int i = 0; i < 5; i++) {
+            String nome = lerAluno(sc);
+            double[] notas = lerNotas(sc);
+            double media = calcularMedia(notas);
+            String situacao = determinarSituacao(media);
+
+            imprimirRelatorio(nome, media, situacao);
+        }
+    }
+}
